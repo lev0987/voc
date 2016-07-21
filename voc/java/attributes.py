@@ -45,10 +45,8 @@ class Attribute:
         writer.write_u2(writer.constant_pool.index(self.name))
         writer.write_u4(len(self))
         self.write_info(writer)
-
     def write_info(self, writer):
         pass
-
     def resolve(self, constant_pool):
         constant_pool.add(self.name)
         self.resolve_info(constant_pool)
